@@ -19,8 +19,9 @@ public class PacMan {
 
   public boolean move() {
     ArrayList<Location> locations = get_valid_moves();
-    /* no valid moves */
-    if (locations.size() == 0) {
+
+    /* if no valid moves, return false */
+    if (locations == null || locations.size() == 0) {
       return false;
     } else {
       this.myLoc = locations.get(0);
