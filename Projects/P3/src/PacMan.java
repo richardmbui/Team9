@@ -26,6 +26,12 @@ public class PacMan {
   }
 
   public JComponent consume() {
-    return null;
+    boolean cookieInLoc = myMap.getLoc(myLoc).contains(Map.Type.COOKIE);
+    if (cookieInLoc == true) {
+      myMap.getLoc(myLoc).remove(Map.Type.COOKIE);
+      return myMap.eatCookie(myName);
+    } else {
+      return null;
+    }
   }
 }
