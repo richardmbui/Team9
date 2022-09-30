@@ -13,7 +13,6 @@ public class TestGhostMove extends TestCase {
     Location loc2 = new Location(2,1);
     Location loc3 = new Location(2,2);
 
-    System.out.println(ghost.myLoc.x + " " + ghost.myLoc.y);
     assertTrue(ghost.myLoc.equals(loc1) || ghost.myLoc.equals(loc2) || ghost.myLoc.equals(loc3));
   }
 }
