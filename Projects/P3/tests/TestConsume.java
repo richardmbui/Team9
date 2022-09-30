@@ -5,7 +5,7 @@ public class TestConsume extends TestCase {
 
   public void testConsume() throws FileNotFoundException {
     NoFrame frame = new NoFrame();
-    PacMan pacman = frame.addPacMan(new Location(2, 1));
+    PacMan pacman = frame.addPacMan(new Location(2, 1)); // Sets location
 
     // Makes all players and begins game
     frame.initPlayers();

@@ -32,7 +32,10 @@ public class PacMan {
     if (cookieInLoc == true) {
       myMap.getLoc(myLoc).remove(Map.Type.COOKIE);
       return myMap.eatCookie(myName);
-    } else {
+    }
+
+    // Returns null if cookie in not in location
+    else {
       return null;
     }
   }
