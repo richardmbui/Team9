@@ -68,6 +68,7 @@ public class Map {
       return wallSet;
     }
 
+    // Edge checks
     if (!(field.get(loc).size() != 0 && field.containsKey(loc))) {
       return emptySet;
     }

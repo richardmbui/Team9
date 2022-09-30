@@ -15,11 +15,11 @@ public class TestMapGetLoc extends TestCase {
     frame.addGhost(new Location(1,1), "Bhoot", Color.red);
     frame.addPacMan(new Location(2,2));
 
-    // Checks if (1,1) location has GHOST but not PACMAN
+    // Checks if (1,1) location has GHOST but not the PACMAN
     assertTrue(myMap.getLoc(new Location (1,1)).contains(Map.Type.GHOST));
     assertFalse(myMap.getLoc(new Location (1,1)).contains(Map.Type.PACMAN));
 
-    // Checks if (2,2) location has PACMAN but not GHOST
+    // Checks if (2,2) location has PACMAN but not the GHOST
     assertTrue(myMap.getLoc(new Location (2,2)).contains(Map.Type.PACMAN));
     assertFalse(myMap.getLoc(new Location (2,2)).contains(Map.Type.GHOST));
 
