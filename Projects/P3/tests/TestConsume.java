@@ -1,6 +1,5 @@
 import java.io.*;
 import junit.framework.*;
-import static org.junit.Assert.*;
 
 public class TestConsume extends TestCase {
 
@@ -12,11 +11,11 @@ public class TestConsume extends TestCase {
     frame.initPlayers();
     frame.startGame();
 
-    // Tests if Cookie exists in (2,1)
+    // Tests if the Cookie exists in (2,1)
     assertTrue(frame.getMap().getLoc(new Location(2, 1)).contains(Map.Type.COOKIE));
     pacman.consume();
 
-    // Tests if Cookie is successfully consumed
+    // Tests if the Cookie is successfully consumed
     assertFalse(frame.getMap().getLoc(new Location(2, 1)).contains(Map.Type.COOKIE));
   }
 }

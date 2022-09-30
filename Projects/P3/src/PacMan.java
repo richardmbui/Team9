@@ -27,6 +27,8 @@ public class PacMan {
 
   public JComponent consume() {
     boolean cookieInLoc = myMap.getLoc(myLoc).contains(Map.Type.COOKIE);
+
+    // Checks if cookie is in respective location
     if (cookieInLoc == true) {
       myMap.getLoc(myLoc).remove(Map.Type.COOKIE);
       return myMap.eatCookie(myName);
