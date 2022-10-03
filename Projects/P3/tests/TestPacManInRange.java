@@ -11,6 +11,9 @@ public class TestPacManInRange extends TestCase {
 
     PacMan pacman = frame.addPacMan(new Location(6, 6)); 
 
-    assertTrue(ghost.is_pacman_in_range());
+    assertTrue(ghost.is_pacman_in_range()== true);
   }
+  
+
+
 }
