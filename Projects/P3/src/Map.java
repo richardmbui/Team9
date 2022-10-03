@@ -72,8 +72,9 @@ public class Map {
   }
 
   public boolean attack(String Name) {
-    // update gameOver
-    return false;
+     /* get name of ghost who is attacking */
+    gameOver = true;
+    return true;
   }
 
   public JComponent eatCookie(String name) {
