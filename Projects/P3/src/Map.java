@@ -2,6 +2,7 @@ import java.util.HashMap;
 import java.util.HashSet;
 import javax.swing.JComponent;
 
+
 public class Map {
 
   public enum Type {
@@ -59,7 +60,20 @@ public class Map {
 
   public HashSet<Type> getLoc(Location loc) {
     // wallSet and emptySet will help you write this method
-    return null;
+
+    boolean xConditions = loc.x < 0 || loc.x >= dim;
+    boolean yConditions = loc.y < 0 || loc.y >= dim;
+
+    if (xConditions || yConditions) {
+      return wallSet;
+    }
+
+    // Edge checks
+    if (!(field.get(loc).size() != 0 && field.containsKey(loc))) {
+      return emptySet;
+    }
+
+    return field.get(loc);
   }
 
   public boolean attack(String Name) {
