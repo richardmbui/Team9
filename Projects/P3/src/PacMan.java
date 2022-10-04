@@ -14,11 +14,46 @@ public class PacMan {
   }
 
   public ArrayList<Location> get_valid_moves() {
-    return null;
+    ArrayList<Location> valid_moves = new ArrayList<Location>();
+    int x = myLoc.x;
+    int y = myLoc.y;
+
+    if (is_valid(new Location(x+1, y))) {
+      valid_moves.add(new Location(x+1, y))
+    }
+    if (is_valid(new Location(x, y+1))) {
+      valid_moves.add(new Location(x, y+1))
+    }
+    if (is_valid(new Location(x-1, y))) {
+      valid_moves.add(new Location(x-1, y))
+    }
+    if (is_valid(new Location(x, y-1))) {
+      valid_moves.add(new Location(x, y-1))
+    }
+    
+    return valid_moves;
+  }
+
+  // return false if a location cotains wall or ghost, otheriwise return true
+  private boolean is_valid(Location loc) {
+    if (myMap.getLoc(loc).contains(Map.Type.WALL)
+      || myMap.getLoc(loc).contains(Map.Type.GHOST)){
+      return false;
+    }
+
+    return true;
   }
 
   public boolean move() {
-    return false;
+    ArrayList<Location> locations = get_valid_moves();
+
+    /* if no valid moves, return false */
+    if (locations == null || locations.size() == 0) {
+      return false;
+    } else {
+      this.myLoc = locations.get(0);
+      return true;
+    }
   }
 
   public boolean is_ghost_in_range() {
@@ -65,3 +100,4 @@ public class PacMan {
     }
   }
 }
+
