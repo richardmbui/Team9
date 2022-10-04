@@ -5,11 +5,12 @@ import java.util.ArrayList;
 public class TestPacManMove extends TestCase {
 
   public void testPacManMove() throws FileNotFoundException {
-    Mainframe frame = new MainFrame();
+    NoFrame frame = new NoFrame();
 
     PacMan test_pacman = frame.addPacMan(new Location(9, 10));
 
-    /* currently, get_valid_moves() is null */
-    assertFalse(test_pacman.move());
+    assertTrue(test_pacman.myLoc.equals(new Location(10, 10)));
+
+    assertTrue(test_pacman.move());
   }
 }
