@@ -36,7 +36,8 @@ public class PacMan {
 
   // return false if a location cotains wall or ghost, otheriwise return true
   private boolean is_valid(Location loc) {
-    if (myMap.getLoc(loc).contains(Map.Type.WALL) 
+
+    if (myMap.getLoc(loc).contains(Map.Type.WALL)
       || myMap.getLoc(loc).contains(Map.Type.GHOST)){
       return false;
     }
@@ -45,15 +46,59 @@ public class PacMan {
   }
 
   public boolean move() {
-    return false;
+    ArrayList<Location> locations = get_valid_moves();
+
+    /* if no valid moves, return false */
+    if (locations == null || locations.size() == 0) {
+      return false;
+    } else {
+      this.myLoc = locations.get(0);
+      return true;
+    }
   }
 
   public boolean is_ghost_in_range() {
+    int x_pm = myLoc.x;
+    int y_pm = myLoc.y;
+
+    if (myMap.getLoc(new Location(x_pm + 1, y_pm)).contains(Map.Type.GHOST)) {
+      return true;
+    }
+
+    if (myMap.getLoc(new Location(x_pm - 1, y_pm)).contains(Map.Type.GHOST)) {
+      return true;
+    }
+
+    if (myMap.getLoc(new Location(x_pm, y_pm + 1)).contains(Map.Type.GHOST)) {
+      return true;
+    }
+    if (myMap.getLoc(new Location(x_pm, y_pm - 1)).contains(Map.Type.GHOST)) {
+      return true;
+    }
+
+    if (myMap.getLoc(new Location(x_pm + 1, y_pm - 1)).contains(Map.Type.GHOST)) {
+      return true;
+    }
+
+    if (myMap.getLoc(new Location(x_pm - 1, y_pm + 1)).contains(Map.Type.GHOST)) {
+      return true;
+    }
     return false;
   }
 
   public JComponent consume() {
-    return null;
+    boolean cookieInLoc = myMap.getLoc(myLoc).contains(Map.Type.COOKIE);
+
+    // Checks if cookie is in respective location
+    if (cookieInLoc == true) {
+      myMap.getLoc(myLoc).remove(Map.Type.COOKIE);
+      return myMap.eatCookie(myName);
+    }
+
+    // Returns null if cookie in not in location
+    else {
+      return null;
+    }
   }
 }
 
