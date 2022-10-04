@@ -19,16 +19,16 @@ public class PacMan {
     int y = myLoc.y;
 
     if (is_valid(new Location(x+1, y))) {
-      valid_moves.add(new Location(x+1, y))
+      valid_moves.add(new Location(x+1, y));
     }
     if (is_valid(new Location(x, y+1))) {
-      valid_moves.add(new Location(x, y+1))
+      valid_moves.add(new Location(x, y+1));
     }
     if (is_valid(new Location(x-1, y))) {
-      valid_moves.add(new Location(x-1, y))
+      valid_moves.add(new Location(x-1, y));
     }
     if (is_valid(new Location(x, y-1))) {
-      valid_moves.add(new Location(x, y-1))
+      valid_moves.add(new Location(x, y-1));
     }
     
     return valid_moves;

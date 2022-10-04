@@ -17,22 +17,22 @@ public class Ghost {
     int y = myLoc.y;
 
     if (is_valid(new Location(x+1, y))) {
-      valid_moves.add(new Location(x+1, y))
+      valid_moves.add(new Location(x+1, y));
     }
     if (is_valid(new Location(x, y+1))) {
-      valid_moves.add(new Location(x, y+1))
+      valid_moves.add(new Location(x, y+1));
     }
     if (is_valid(new Location(x-1, y))) {
-      valid_moves.add(new Location(x-1, y))
+      valid_moves.add(new Location(x-1, y));
     }
     if (is_valid(new Location(x, y-1))) {
-      valid_moves.add(new Location(x, y-1))
+      valid_moves.add(new Location(x, y-1));
     }
     
     return valid_moves;
   }
 
-  // return false if a location cotains wall, otheriwise return true
+  // return false if a location contains wall, otheriwise return true
   private boolean is_valid(Location loc) {
     if (myMap.getLoc(loc).contains(Map.Type.WALL)){
       return false;
