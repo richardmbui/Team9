@@ -51,6 +51,17 @@ public class PacMan {
   }
 
   public JComponent consume() {
-    return null;
+    boolean cookieInLoc = myMap.getLoc(myLoc).contains(Map.Type.COOKIE);
+
+    // Checks if cookie is in respective location
+    if (cookieInLoc == true) {
+      myMap.getLoc(myLoc).remove(Map.Type.COOKIE);
+      return myMap.eatCookie(myName);
+    }
+
+    // Returns null if cookie in not in location
+    else {
+      return null;
+    }
   }
 }
