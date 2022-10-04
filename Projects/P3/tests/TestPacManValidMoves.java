@@ -2,6 +2,7 @@ import java.io.*;
 import junit.framework.*;
 import java.util.ArrayList;
 
+
 public class TestPacManValidMoves extends TestCase {
 
   public void testPacManValidMoves() throws FileNotFoundException {
@@ -15,3 +16,4 @@ public class TestPacManValidMoves extends TestCase {
     assertTrue(pacman.get_valid_moves(new Location(1,1).equals(valid_moves));
   }
 }
+

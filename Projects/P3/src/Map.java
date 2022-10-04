@@ -55,6 +55,15 @@ public class Map {
   public boolean move(String name, Location loc, Type type) {
     // update locations, components, and field
     // use the setLocation method for the component to move it to the new location
+    if (locations.containsKey(name) & components.containsKey(name)) {
+      locations.put(name, loc);
+      components.get(name).setLocation(loc.x, loc.y);
+      field.get(loc).clear();
+      field.get(loc).add(type);
+
+      return true;
+    }
+
     return false;
   }
 
@@ -77,8 +86,9 @@ public class Map {
   }
 
   public boolean attack(String Name) {
-    // update gameOver
-    return false;
+     /* get name of ghost who is attacking */
+    gameOver = true;
+    return true;
   }
 
   public JComponent eatCookie(String name) {

@@ -36,6 +36,7 @@ public class PacMan {
 
   // return false if a location cotains wall or ghost, otheriwise return true
   private boolean is_valid(Location loc) {
+
     if (myMap.getLoc(loc).contains(Map.Type.WALL)
       || myMap.getLoc(loc).contains(Map.Type.GHOST)){
       return false;
