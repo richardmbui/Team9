@@ -12,7 +12,33 @@ public class Ghost {
   }
 
   public ArrayList<Location> get_valid_moves() {
-    return null;
+    ArrayList<Location> valid_moves = new ArrayList<Location>();
+    int x = myLoc.x;
+    int y = myLoc.y;
+
+    if (is_valid(new Location(x+1, y))) {
+      valid_moves.add(new Location(x+1, y))
+    }
+    if (is_valid(new Location(x, y+1))) {
+      valid_moves.add(new Location(x, y+1))
+    }
+    if (is_valid(new Location(x-1, y))) {
+      valid_moves.add(new Location(x-1, y))
+    }
+    if (is_valid(new Location(x, y-1))) {
+      valid_moves.add(new Location(x, y-1))
+    }
+    
+    return valid_moves;
+  }
+
+  // return false if a location cotains wall, otheriwise return true
+  private boolean is_valid(Location loc) {
+    if (myMap.getLoc(loc).contains(Map.Type.WALL)){
+      return false;
+    }
+
+    return true;
   }
 
   public boolean move() {
@@ -60,6 +86,11 @@ public class Ghost {
   }
 
   public boolean attack() {
-    return false;
+    if (is_pacman_in_range() == true) {
+      myMap.attack(myName);
+      return true;
+    } else {
+      return false;
+    }
   }
 }
