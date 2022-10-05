@@ -13,9 +13,9 @@ public class TestMapMove extends TestCase {
     // Ghost ghost = frame.addGhost(new Location(23,1), "Pinky", Color.pink);
     Location loc = new Location(1,2);
     HashSet<Type> type = new HashSet<Type>();
-    type.add(Map.Type.PACMAN)
+    type.add(Map.Type.PACMAN);
 
-    map.move("pacman", new Location (1,2), Map.Type.PACMAN)
+    map.move("pacman", new Location (1,2), Map.Type.PACMAN);
     
     assertTrue(map.locations.get("pacman").equals(loc));
     assertTrue(map.field.get(loc).equals(type));
