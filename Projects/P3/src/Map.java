@@ -78,7 +78,7 @@ public class Map {
     }
 
     // Edge checks
-    if (!(field.get(loc).size() != 0 && field.containsKey(loc))) {
+    if (field.get(loc) == null || !(field.get(loc).size() != 0 && field.containsKey(loc))) {
       return emptySet;
     }
 
