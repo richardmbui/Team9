@@ -13,6 +13,6 @@ public class TestGhostValidMoves extends TestCase {
     valid_moves.add(new Location(2,1));
 
     Ghost ghost = frame.addGhost(new Location(1,1), "Pinky", Color.pink);
-    assertTrue(ghost.get_valid_moves(new Location(1,1).equals(valid_moves)));
+    assertTrue(ghost.get_valid_moves().equals(valid_moves));
   }
 }
