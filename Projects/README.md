@@ -15,7 +15,7 @@ From here, a GUI should pop up where you can select "Start Game"
 ## PacMan Class
 1. move(): This method controls PacMan's moves. It gets all the possible moves by calling get_valid_moves() and uses the first Location in the list if it is valid, moving the PacMan. It returns true if the PacMan moves and false if not.
 
-To test this, I created a PacMan at coordinates (9,10) and initialized the board to have no ghosts. Because get_valid_moves() is implemented to first add a new location at (x+1, y) if available, I tested if move() returned true and if the new location of the PacMan was (10,10).
+To test this, I created a PacMan at coordinates (1,1) and initialized the board to have no ghosts. Because get_valid_moves could move the PacMan up or to the right (assuming walls are on other corners), I checked if the PacMan's location is now (1,2) or (2,1). 
 
 ## Ghost Class
 1. attack(): This method has the Ghost attack PacMan if the PacMan is in range of the ghost, and calls Map's attack() method if so. It returns true for a successful attack and false for not.
