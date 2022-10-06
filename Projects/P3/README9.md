@@ -21,6 +21,11 @@ To test this, I created a PacMan at coordinates (1,1) and initialized the board 
 
 To test this this function, I checked every possible spot that is 1 spot away and checked whether a ghost character is located there
 
+3. consume(): This method determines whether the cookie is actually consumed after being eaten. The method returns null if the component is not consumed.
+
+To test this function, I set a location for pacman and made all players to begin the game. Then, I tested if the cookie existed in that location and once the consume function is called, check whether the cookie is consumed.
+
+
 ## Ghost Class
 1. attack(): This method has the Ghost attack PacMan if the PacMan is in range of the ghost, and calls Map's attack() method if so. It returns true for a successful attack and false for not.
 
@@ -30,6 +35,10 @@ To test this, I created PacMan and Ghost characters that are adjacent on the boa
 
 To test this this function, I checked every possible spot that is 1 spot away and checked whether a pacman character is located there
 
+3. move(): This method verifies whether the expected location to be moved towards is a valid movement and if the end location does not consist of a barrier. 
+
+To test this, I created a Ghost on the board and asserts whether the players' locations landed on a valid spot based on several possible movements.
+
 ## Map Class
 1. attack(): This method updates the game to be over if the Ghost attacked PacMan, returning true if so.
 
@@ -38,3 +47,7 @@ To test this, I called the ghost's attack() method, which relies on map's attack
 2. eatCookie(): this function keeps track of the cookies on the map. This function is used to update the GUI display when a cookie is eaten
 
 To test this function, I create a new locatoin and a pacman character. Then I check whether if a blank map returns null when eatCookie() is used
+
+3. getLoc(): This method simply retrieves the icon given the location that it is currently presently at
+
+To test this, I set ghost and pacman locations respectively, and checked if one location consisted of the ghost and not pacman, and vice-versa
