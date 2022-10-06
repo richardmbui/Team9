@@ -10,6 +10,9 @@ java -cp "src/" StartMenu
 
 From here, a GUI should pop up where you can select "Start Game"
 
+## Display of Running PacMan
+![PacMan View](PacMan.png)
+
 # Functions
 
 ## PacMan Class
