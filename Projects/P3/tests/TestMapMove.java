@@ -15,9 +15,7 @@ public class TestMapMove extends TestCase {
     HashSet<Map.Type> type = new HashSet<Map.Type>();
     type.add(Map.Type.PACMAN);
 
-    map.move("pacman", new Location (1,2), Map.Type.PACMAN);
-    
-    // assertTrue(map.locations.get("pacman").equals(loc));
+    assertTrue(map.move("pacman", new Location (1,2), Map.Type.PACMAN));
     assertTrue(map.getLoc(loc).equals(type));
   }
 }
