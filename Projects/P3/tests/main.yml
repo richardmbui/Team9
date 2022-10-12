@@ -1,0 +1,19 @@
+name: CI
+
+on: [push, pull_request, workflow_dispatch]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    container: openjdk
+    steps:
+      - uses: actions/checkout@v2
+      - name: Build Project
+        run: |
+          java -version
+          javac -version
+          javac *.java
+          
+          javac -cp "src/" src/*.java
+          
+          javac -cp "tests/junit-4.10.jar:src/:tests/" src/*.java tests/*.java
