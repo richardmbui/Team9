@@ -14,7 +14,7 @@ jobs:
           ls
           java -version
           javac -version
-          javac *.java
+          javac Projects/P3/src/*.java
           
           javac -cp "Projects/P3/src/" Projects/P3/src/*.java
           
