@@ -53,6 +53,40 @@ jobs:
           javac -cp "tests/junit-4.10.jar:src/:tests/" src/*.java tests/*.java
           java -cp "tests/junit-4.10.jar:src/:tests/" org.junit.runner.JUnitCore TestPacManValidMoves
 
+  TestAttack:
+    runs-on: ubuntu-latest
+    container: openjdk
+    steps:
+      - uses: actions/checkout@v2
+      - name: run TestAttack
+        run: |
+          cd Projects/P3
+          
+          javac -cp "tests/junit-4.10.jar:src/:tests/" src/*.java tests/*.java
+          java -cp "tests/junit-4.10.jar:src/:tests/" org.junit.runner.JUnitCore TestAttack
 
+  TestMapAttack:
+      runs-on: ubuntu-latest
+      container: openjdk
+      steps:
+        - uses: actions/checkout@v2
+        - name: run TestMapAttack
+          run: |
+            cd Projects/P3
+            
+            javac -cp "tests/junit-4.10.jar:src/:tests/" src/*.java tests/*.java
+            java -cp "tests/junit-4.10.jar:src/:tests/" org.junit.runner.JUnitCore TestMapAttack
+            
+  TestPacManMove:
+      runs-on: ubuntu-latest
+      container: openjdk
+      steps:
+        - uses: actions/checkout@v2
+        - name: run TestPacManMove
+          run: |
+            cd Projects/P3
+            
+            javac -cp "tests/junit-4.10.jar:src/:tests/" src/*.java tests/*.java
+            java -cp "tests/junit-4.10.jar:src/:tests/" org.junit.runner.JUnitCore TestPacManMove
 
 
