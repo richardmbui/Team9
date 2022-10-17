@@ -54,3 +54,4 @@ jobs:
           java -cp "tests/junit-4.10.jar:src/:tests/" org.junit.runner.JUnitCore TestPacManValidMoves
 
 
+
