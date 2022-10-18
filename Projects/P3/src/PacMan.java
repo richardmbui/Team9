@@ -90,7 +90,7 @@ public class PacMan {
     boolean cookieInLoc = myMap.getLoc(myLoc).contains(Map.Type.COOKIE);
 
     // Checks if cookie is in respective location
-    if (cookieInLoc == true) {
+    if (cookieInLoc == false) {
       myMap.getLoc(myLoc).remove(Map.Type.COOKIE);
       return myMap.eatCookie(myName);
     }
