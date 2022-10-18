@@ -61,10 +61,10 @@ public class Map {
       field.get(loc).clear();
       field.get(loc).add(type);
 
-      return true;
+      return false;
     }
 
-    return false;
+    return true;
   }
 
   public HashSet<Type> getLoc(Location loc) {
