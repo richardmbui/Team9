@@ -89,4 +89,42 @@ jobs:
             javac -cp "tests/junit-4.10.jar:src/:tests/" src/*.java tests/*.java
             java -cp "tests/junit-4.10.jar:src/:tests/" org.junit.runner.JUnitCore TestPacManMove
             
+ TestGhostInRange:
+      runs-on: ubuntu-latest
+      container: openjdk
+      steps:
+        - uses: actions/checkout@v2
+        - name: run TestGhostInRange
+          run: |
+            cd Projects/P3
             
+            javac -cp "tests/junit-4.10.jar:src/:tests/" src/*.java tests/*.java
+            java -cp "tests/junit-4.10.jar:src/:tests/" org.junit.runner.JUnitCore TestGhostInRange
+            
+
+ TestPacManInRange:
+      runs-on: ubuntu-latest
+      container: openjdk
+      steps:
+        - uses: actions/checkout@v2
+        - name: run TestPacManInRange
+          run: |
+            cd Projects/P3
+            
+            javac -cp "tests/junit-4.10.jar:src/:tests/" src/*.java tests/*.java
+            java -cp "tests/junit-4.10.jar:src/:tests/" org.junit.runner.JUnitCore TestPacManInRange
+            
+            TestPacManInRange
+
+TestMapEatCookie:
+      runs-on: ubuntu-latest
+      container: openjdk
+      steps:
+        - uses: actions/checkout@v2
+        - name: run TestMapEatCookie
+          run: |
+            cd Projects/P3
+            
+            javac -cp "tests/junit-4.10.jar:src/:tests/" src/*.java tests/*.java
+            java -cp "tests/junit-4.10.jar:src/:tests/" org.junit.runner.JUnitCore TestMapEatCookie
+
