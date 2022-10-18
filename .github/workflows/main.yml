@@ -1,0 +1,164 @@
+name: CI
+
+on: [push, pull_request, workflow_dispatch]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    container: openjdk
+    steps:
+      - uses: actions/checkout@v2
+      - name: compile
+        run: |
+          java -version
+          javac -version
+          cd Projects/P3
+          
+          javac -cp "src/" src/*.java
+          javac -cp "tests/junit-4.10.jar:src/:tests/" src/*.java tests/*.java
+
+  TestMapMove:
+    runs-on: ubuntu-latest
+    container: openjdk
+    steps:
+      - uses: actions/checkout@v2
+      - name: run TestMapMove
+        run: |
+          cd Projects/P3
+          
+          javac -cp "tests/junit-4.10.jar:src/:tests/" src/*.java tests/*.java
+          java -cp "tests/junit-4.10.jar:src/:tests/" org.junit.runner.JUnitCore TestMapMove
+
+  TestGhostValidMoves:
+    runs-on: ubuntu-latest
+    container: openjdk
+    steps:
+      - uses: actions/checkout@v2
+      - name: run TestGhostValidMoves
+        run: |
+          cd Projects/P3
+          
+          javac -cp "tests/junit-4.10.jar:src/:tests/" src/*.java tests/*.java
+          java -cp "tests/junit-4.10.jar:src/:tests/" org.junit.runner.JUnitCore TestGhostValidMoves
+
+  TestPacManValidMoves:
+    runs-on: ubuntu-latest
+    container: openjdk
+    steps:
+      - uses: actions/checkout@v2
+      - name: run TestPacManValidMoves
+        run: |
+          cd Projects/P3
+          
+          javac -cp "tests/junit-4.10.jar:src/:tests/" src/*.java tests/*.java
+          java -cp "tests/junit-4.10.jar:src/:tests/" org.junit.runner.JUnitCore TestPacManValidMoves
+
+  TestAttack:
+    runs-on: ubuntu-latest
+    container: openjdk
+    steps:
+      - uses: actions/checkout@v2
+      - name: run TestAttack
+        run: |
+          cd Projects/P3
+          
+          javac -cp "tests/junit-4.10.jar:src/:tests/" src/*.java tests/*.java
+          java -cp "tests/junit-4.10.jar:src/:tests/" org.junit.runner.JUnitCore TestAttack
+          
+  TestMapAttack:
+      runs-on: ubuntu-latest
+      container: openjdk
+      steps:
+        - uses: actions/checkout@v2
+        - name: run TestMapAttack
+          run: |
+            cd Projects/P3
+            
+            javac -cp "tests/junit-4.10.jar:src/:tests/" src/*.java tests/*.java
+            java -cp "tests/junit-4.10.jar:src/:tests/" org.junit.runner.JUnitCore TestMapAttack
+            
+  TestPacManMove:
+      runs-on: ubuntu-latest
+      container: openjdk
+      steps:
+        - uses: actions/checkout@v2
+        - name: run TestPacManMove
+          run: |
+            cd Projects/P3
+            
+            javac -cp "tests/junit-4.10.jar:src/:tests/" src/*.java tests/*.java
+            java -cp "tests/junit-4.10.jar:src/:tests/" org.junit.runner.JUnitCore TestPacManMove
+ 
+  TestGhostInRange:
+      runs-on: ubuntu-latest
+      container: openjdk
+      steps:
+        - uses: actions/checkout@v2
+        - name: run TestGhostInRange
+          run: |
+            cd Projects/P3
+            
+            javac -cp "tests/junit-4.10.jar:src/:tests/" src/*.java tests/*.java
+            java -cp "tests/junit-4.10.jar:src/:tests/" org.junit.runner.JUnitCore TestGhostInRange
+            
+
+  TestPacManInRange:
+      runs-on: ubuntu-latest
+      container: openjdk
+      steps:
+        - uses: actions/checkout@v2
+        - name: run TestPacManInRange
+          run: |
+            cd Projects/P3
+            
+            javac -cp "tests/junit-4.10.jar:src/:tests/" src/*.java tests/*.java
+            java -cp "tests/junit-4.10.jar:src/:tests/" org.junit.runner.JUnitCore TestPacManInRange
+            
+  TestMapEatCookie:
+      runs-on: ubuntu-latest
+      container: openjdk
+      steps:
+        - uses: actions/checkout@v2
+        - name: run TestMapEatCookie
+          run: |
+            cd Projects/P3
+            
+            javac -cp "tests/junit-4.10.jar:src/:tests/" src/*.java tests/*.java
+            java -cp "tests/junit-4.10.jar:src/:tests/" org.junit.runner.JUnitCore TestMapEatCookie
+
+  
+  TestConsume:
+    runs-on: ubuntu-latest
+    container: openjdk
+    steps:
+      - uses: actions/checkout@v2
+      - name: run TestConsume
+        run: |
+          cd Projects/P3
+          
+          javac -cp "tests/junit-4.10.jar:src/:tests/" src/*.java tests/*.java
+          java -cp "tests/junit-4.10.jar:src/:tests/" org.junit.runner.JUnitCore TestConsume
+
+  TestGhostMove:
+    runs-on: ubuntu-latest
+    container: openjdk
+    steps:
+      - uses: actions/checkout@v2
+      - name: run TestGhostMove
+        run: |
+          cd Projects/P3
+          
+          javac -cp "tests/junit-4.10.jar:src/:tests/" src/*.java tests/*.java
+          java -cp "tests/junit-4.10.jar:src/:tests/" org.junit.runner.JUnitCore TestGhostMove
+
+  TestMapGetLoc:
+    runs-on: ubuntu-latest
+    container: openjdk
+    steps:
+      - uses: actions/checkout@v2
+      - name: run TestMapGetLoc
+        run: |
+          cd Projects/P3
+          
+          javac -cp "tests/junit-4.10.jar:src/:tests/" src/*.java tests/*.java
+          java -cp "tests/junit-4.10.jar:src/:tests/" org.junit.runner.JUnitCore TestMapGetLoc
