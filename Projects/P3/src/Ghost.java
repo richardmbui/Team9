@@ -57,8 +57,8 @@ public class Ghost {
   }
 
   public boolean is_pacman_in_range() {
-    int x_pm = myLoc.x;
-    int y_pm = myLoc.y;
+    int x_pm = myLoc.y;
+    int y_pm = myLoc.x;
 
     if (myMap.getLoc(new Location(x_pm + 1, y_pm)).contains(Map.Type.PACMAN)) {
       return true;
