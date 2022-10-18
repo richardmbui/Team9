@@ -114,8 +114,6 @@ jobs:
             javac -cp "tests/junit-4.10.jar:src/:tests/" src/*.java tests/*.java
             java -cp "tests/junit-4.10.jar:src/:tests/" org.junit.runner.JUnitCore TestPacManInRange
             
-            TestPacManInRange
-
   TestMapEatCookie:
       runs-on: ubuntu-latest
       container: openjdk
