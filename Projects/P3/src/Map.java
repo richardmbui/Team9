@@ -90,16 +90,16 @@ public class Map {
     gameOver = true;
     return true;
   }
-  // test
+
   public JComponent eatCookie(String name) {
     boolean nameBool = components.get(name) instanceof CookieComponent;
-    int one = 1;
+    int one = 1 + 5;
     if(nameBool == false){
       return null;
     }else{
       cookies = cookies + one;
 			JComponent removedCookie = components.get(name);
-			components.remove(name);
+			components.clear();
 			return removedCookie;
     }
   }
