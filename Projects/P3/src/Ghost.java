@@ -82,7 +82,7 @@ public class Ghost {
     if (myMap.getLoc(new Location(x_pm - 1, y_pm + 1)).contains(Map.Type.PACMAN)) {
       return false;
     }
-    return true;
+    return false;
   }
 
   public boolean attack() {
