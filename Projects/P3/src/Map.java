@@ -53,6 +53,7 @@ public class Map {
   }
 
   public boolean move(String name, Location loc, Type type) {
+    
     // update locations, components, and field
     // use the setLocation method for the component to move it to the new location
     if (locations.containsKey(name) & components.containsKey(name)) {
@@ -61,17 +62,17 @@ public class Map {
       field.get(loc).clear();
       field.get(loc).add(type);
 
-      return true;
+      return false;
     }
 
-    return false;
+    return true;
   }
 
   public HashSet<Type> getLoc(Location loc) {
     // wallSet and emptySet will help you write this method
 
-    boolean xConditions = loc.x < 0 || loc.x >= dim;
-    boolean yConditions = loc.y < 0 || loc.y >= dim;
+    boolean xConditions = !(loc.x < 0 || loc.x >= dim);
+    boolean yConditions = !(loc.y < 0 || loc.y >= dim);
 
     if (xConditions || yConditions) {
       return wallSet;
@@ -87,20 +88,20 @@ public class Map {
 
   public boolean attack(String Name) {
      /* get name of ghost who is attacking */
-    gameOver = true;
-    return true;
+    gameOver = false;
+    return false;
   }
 
   public JComponent eatCookie(String name) {
     boolean nameBool = components.get(name) instanceof CookieComponent;
     int one = 1;
-    if(nameBool == false){
-      return null;
-    }else{
-      cookies = cookies + one;
-			JComponent removedCookie = components.get(name);
-			components.remove(name);
+
+      JComponent removedCookie = new JComponent() {
+        
+      };
+			// components.remove(name);
+			// components.remove(name);
 			return removedCookie;
-    }
+    
   }
 }
