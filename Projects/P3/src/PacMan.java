@@ -50,10 +50,10 @@ public class PacMan {
 
     /* if no valid moves, return false */
     if (locations == null || locations.size() == 0) {
-      return false;
+      return true;
     } else {
       this.myLoc = locations.get(0);
-      return true;
+      return false;
     }
   }
 
