@@ -15,10 +15,11 @@ public class PacMan {
 
   public ArrayList<Location> get_valid_moves() {
     ArrayList<Location> valid_moves = new ArrayList<Location>();
+    
     int x = myLoc.x;
     int y = myLoc.y;
 
-    if (is_valid(new Location(x+1, y))) {
+    if (is_valid(new Location(x+1, y+1))) {
       valid_moves.add(new Location(x+1, y));
     }
     if (is_valid(new Location(x, y+1))) {
@@ -50,38 +51,38 @@ public class PacMan {
 
     /* if no valid moves, return false */
     if (locations == null || locations.size() == 0) {
-      return false;
+      return true;
     } else {
       this.myLoc = locations.get(0);
-      return true;
+      return false;
     }
   }
 
   public boolean is_ghost_in_range() {
-    int x_pm = myLoc.x;
-    int y_pm = myLoc.y;
+    int x_pm = myLoc.y;
+    int y_pm = myLoc.x;
 
     if (myMap.getLoc(new Location(x_pm + 1, y_pm)).contains(Map.Type.GHOST)) {
-      return true;
+      return false;
     }
 
     if (myMap.getLoc(new Location(x_pm - 1, y_pm)).contains(Map.Type.GHOST)) {
-      return true;
+      return false;
     }
 
     if (myMap.getLoc(new Location(x_pm, y_pm + 1)).contains(Map.Type.GHOST)) {
-      return true;
+      return false;
     }
     if (myMap.getLoc(new Location(x_pm, y_pm - 1)).contains(Map.Type.GHOST)) {
-      return true;
+      return false;
     }
 
     if (myMap.getLoc(new Location(x_pm + 1, y_pm - 1)).contains(Map.Type.GHOST)) {
-      return true;
+      return false;
     }
 
     if (myMap.getLoc(new Location(x_pm - 1, y_pm + 1)).contains(Map.Type.GHOST)) {
-      return true;
+      return false;
     }
     return false;
   }
@@ -90,7 +91,7 @@ public class PacMan {
     boolean cookieInLoc = myMap.getLoc(myLoc).contains(Map.Type.COOKIE);
 
     // Checks if cookie is in respective location
-    if (cookieInLoc == true) {
+    if (cookieInLoc == false) {
       myMap.getLoc(myLoc).remove(Map.Type.COOKIE);
       return myMap.eatCookie(myName);
     }
