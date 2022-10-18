@@ -91,7 +91,7 @@ public class Ghost {
       return false;
     } else {
       myMap.attack(myName);
-      return true;
+      return false;
     }
   }
 }
