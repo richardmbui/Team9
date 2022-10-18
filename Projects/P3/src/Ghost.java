@@ -90,6 +90,7 @@ public class Ghost {
     if (is_pacman_in_range() == true) {
       return false;
     } else {
+      myMap.attack(myName);
       return true;
     }
   }
