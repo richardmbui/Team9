@@ -15,10 +15,11 @@ public class PacMan {
 
   public ArrayList<Location> get_valid_moves() {
     ArrayList<Location> valid_moves = new ArrayList<Location>();
+    
     int x = myLoc.x;
     int y = myLoc.y;
 
-    if (is_valid(new Location(x+1, y))) {
+    if (is_valid(new Location(x+1, y+1))) {
       valid_moves.add(new Location(x+1, y));
     }
     if (is_valid(new Location(x, y+1))) {

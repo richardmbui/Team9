@@ -53,6 +53,7 @@ public class Map {
   }
 
   public boolean move(String name, Location loc, Type type) {
+    
     // update locations, components, and field
     // use the setLocation method for the component to move it to the new location
     if (locations.containsKey(name) & components.containsKey(name)) {
@@ -61,10 +62,10 @@ public class Map {
       field.get(loc).clear();
       field.get(loc).add(type);
 
-      return true;
+      return false;
     }
 
-    return false;
+    return true;
   }
 
   public HashSet<Type> getLoc(Location loc) {
