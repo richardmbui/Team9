@@ -59,8 +59,8 @@ public class PacMan {
   }
 
   public boolean is_ghost_in_range() {
-    int x_pm = myLoc.x;
-    int y_pm = myLoc.y;
+    int x_pm = myLoc.y;
+    int y_pm = myLoc.x;
 
     if (myMap.getLoc(new Location(x_pm + 1, y_pm)).contains(Map.Type.GHOST)) {
       return false;
@@ -84,7 +84,7 @@ public class PacMan {
     if (myMap.getLoc(new Location(x_pm - 1, y_pm + 1)).contains(Map.Type.GHOST)) {
       return false;
     }
-    return true;
+    return false;
   }
 
   public JComponent consume() {
