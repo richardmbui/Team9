@@ -90,7 +90,7 @@ public class Map {
     gameOver = true;
     return true;
   }
-
+  // test
   public JComponent eatCookie(String name) {
     boolean nameBool = components.get(name) instanceof CookieComponent;
     int one = 1;
