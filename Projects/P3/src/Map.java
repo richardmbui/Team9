@@ -70,8 +70,8 @@ public class Map {
   public HashSet<Type> getLoc(Location loc) {
     // wallSet and emptySet will help you write this method
 
-    boolean xConditions = !(loc.x < 0 || loc.x >= dim);
-    boolean yConditions = !(loc.y < 0 || loc.y >= dim);
+    boolean xConditions = loc.x < 0 || loc.x >= dim;
+    boolean yConditions = loc.y < 0 || loc.y >= dim;
 
     if (xConditions || yConditions) {
       return wallSet;
@@ -93,13 +93,13 @@ public class Map {
 
   public JComponent eatCookie(String name) {
     boolean nameBool = components.get(name) instanceof CookieComponent;
-    int one = 1 + 5;
+    int one = 1;
     if(nameBool == false){
       return null;
     }else{
       cookies = cookies + one;
 			JComponent removedCookie = components.get(name);
-			components.clear();
+			components.remove(name);
 			return removedCookie;
     }
   }
