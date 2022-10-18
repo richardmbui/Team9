@@ -88,8 +88,8 @@ jobs:
             
             javac -cp "tests/junit-4.10.jar:src/:tests/" src/*.java tests/*.java
             java -cp "tests/junit-4.10.jar:src/:tests/" org.junit.runner.JUnitCore TestPacManMove
-            
- TestGhostInRange:
+ 
+  TestGhostInRange:
       runs-on: ubuntu-latest
       container: openjdk
       steps:
@@ -102,7 +102,7 @@ jobs:
             java -cp "tests/junit-4.10.jar:src/:tests/" org.junit.runner.JUnitCore TestGhostInRange
             
 
- TestPacManInRange:
+  TestPacManInRange:
       runs-on: ubuntu-latest
       container: openjdk
       steps:
@@ -116,7 +116,7 @@ jobs:
             
             TestPacManInRange
 
-TestMapEatCookie:
+  TestMapEatCookie:
       runs-on: ubuntu-latest
       container: openjdk
       steps:
