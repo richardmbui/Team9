@@ -46,14 +46,15 @@ public class Ghost {
     ArrayList<Location> moves = get_valid_moves();
 
     if (moves == null) {
-      return true;
+      return false;
     }
 
     if (moves.size() == 0) {
-      return true;
-    } else {
-      this.myLoc = moves.get(0);
       return false;
+    } else {
+      this.myLoc.x = moves.get(0).x;
+      this.myLoc.y = moves.get(0).y;
+      return true;
     }
   }
 
