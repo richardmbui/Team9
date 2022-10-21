@@ -71,8 +71,8 @@ public class Map {
   public HashSet<Type> getLoc(Location loc) {
     // wallSet and emptySet will help you write this method
 
-    boolean xConditions = !(loc.x < 0 || loc.x >= dim);
-    boolean yConditions = !(loc.y < 0 || loc.y >= dim);
+    boolean xConditions = loc.x < 0 || loc.x >= dim;
+    boolean yConditions = loc.y < 0 || loc.y >= dim;
 
     if (xConditions || yConditions) {
       return wallSet;
