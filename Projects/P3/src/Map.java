@@ -88,8 +88,8 @@ public class Map {
 
   public boolean attack(String Name) {
      /* get name of ghost who is attacking */
-    gameOver = false;
-    return false;
+    gameOver = true;
+    return true;
   }
 
   public JComponent eatCookie(String name) {
