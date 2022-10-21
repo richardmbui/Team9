@@ -53,8 +53,7 @@ public class PacMan {
     if (locations == null || locations.size() == 0) {
       return false;
     } else {
-    	this.myLoc.x = locations.get(0).x;
-        this.myLoc.y = locations.get(0).y;
+      this.myLoc = locations.get(0);
       return true;
     }
   }

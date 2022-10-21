@@ -52,8 +52,7 @@ public class Ghost {
     if (moves.size() == 0) {
       return false;
     } else {
-      this.myLoc.x = moves.get(0).x;
-      this.myLoc.y = moves.get(0).y;
+      this.myLoc = moves.get(0);
       return true;
     }
   }
