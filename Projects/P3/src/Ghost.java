@@ -17,7 +17,7 @@ public class Ghost {
     int x = myLoc.x;
     int y = myLoc.y;
 
-    if (is_valid(new Location(x+1, y+1))) {
+    if (is_valid(new Location(x+1, y))) {
       valid_moves.add(new Location(x+1, y));
     }
     if (is_valid(new Location(x, y+1))) {

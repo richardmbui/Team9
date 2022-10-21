@@ -96,12 +96,14 @@ public class Map {
     boolean nameBool = components.get(name) instanceof CookieComponent;
     int one = 1;
 
-      JComponent removedCookie = new JComponent() {
-        
-      };
-			// components.remove(name);
-			// components.remove(name);
-			return removedCookie;
+    if(nameBool == false){
+      return null;
+    } else{
+      cookies = cookies + one;
+      JComponent removedCookie = components.get(name);
+      components.remove(name);
+      return removedCookie;
+    }
     
   }
 }
