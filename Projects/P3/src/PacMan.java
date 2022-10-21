@@ -19,7 +19,7 @@ public class PacMan {
     int x = myLoc.x;
     int y = myLoc.y;
 
-    if (is_valid(new Location(x+1, y+1))) {
+    if (is_valid(new Location(x+1, y))) {
       valid_moves.add(new Location(x+1, y));
     }
     if (is_valid(new Location(x, y+1))) {
@@ -51,10 +51,10 @@ public class PacMan {
 
     /* if no valid moves, return false */
     if (locations == null || locations.size() == 0) {
-      return true;
+      return false;
     } else {
       this.myLoc = locations.get(0);
-      return false;
+      return true;
     }
   }
 
@@ -63,26 +63,26 @@ public class PacMan {
     int y_pm = myLoc.x;
 
     if (myMap.getLoc(new Location(x_pm + 1, y_pm)).contains(Map.Type.GHOST)) {
-      return false;
+      return true;
     }
 
     if (myMap.getLoc(new Location(x_pm - 1, y_pm)).contains(Map.Type.GHOST)) {
-      return false;
+      return true;
     }
 
     if (myMap.getLoc(new Location(x_pm, y_pm + 1)).contains(Map.Type.GHOST)) {
-      return false;
+      return true;
     }
     if (myMap.getLoc(new Location(x_pm, y_pm - 1)).contains(Map.Type.GHOST)) {
-      return false;
+      return true;
     }
 
     if (myMap.getLoc(new Location(x_pm + 1, y_pm - 1)).contains(Map.Type.GHOST)) {
-      return false;
+      return true;
     }
 
     if (myMap.getLoc(new Location(x_pm - 1, y_pm + 1)).contains(Map.Type.GHOST)) {
-      return false;
+      return true;
     }
     return false;
   }
@@ -91,7 +91,7 @@ public class PacMan {
     boolean cookieInLoc = myMap.getLoc(myLoc).contains(Map.Type.COOKIE);
 
     // Checks if cookie is in respective location
-    if (cookieInLoc == false) {
+    if (cookieInLoc == true) {
       myMap.getLoc(myLoc).remove(Map.Type.COOKIE);
       return myMap.eatCookie(myName);
     }

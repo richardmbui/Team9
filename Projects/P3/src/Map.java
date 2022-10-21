@@ -62,17 +62,17 @@ public class Map {
       field.get(loc).clear();
       field.get(loc).add(type);
 
-      return false;
+      return true;
     }
 
-    return true;
+    return false;
   }
 
   public HashSet<Type> getLoc(Location loc) {
     // wallSet and emptySet will help you write this method
 
-    boolean xConditions = !(loc.x < 0 || loc.x >= dim);
-    boolean yConditions = !(loc.y < 0 || loc.y >= dim);
+    boolean xConditions = loc.x < 0 || loc.x >= dim;
+    boolean yConditions = loc.y < 0 || loc.y >= dim;
 
     if (xConditions || yConditions) {
       return wallSet;
@@ -88,20 +88,22 @@ public class Map {
 
   public boolean attack(String Name) {
      /* get name of ghost who is attacking */
-    gameOver = false;
-    return false;
+    gameOver = true;
+    return true;
   }
 
   public JComponent eatCookie(String name) {
     boolean nameBool = components.get(name) instanceof CookieComponent;
     int one = 1;
 
-      JComponent removedCookie = new JComponent() {
-        
-      };
-			// components.remove(name);
-			// components.remove(name);
-			return removedCookie;
+    if(nameBool == false){
+      return null;
+    } else{
+      cookies = cookies + one;
+      JComponent removedCookie = components.get(name);
+      components.remove(name);
+      return removedCookie;
+    }
     
   }
 }
